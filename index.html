@@ -6,6 +6,8 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,700|Roboto:300,400,700" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="favicon.ico"/>
+    <link rel="stylesheet" href="journyio_layout.css">
 
     <!--
     ReDoc doesn't change outer page styles
@@ -18,7 +20,39 @@
     </style>
 </head>
 <body>
-<redoc spec-url='http://localhost:4001/spec.json'></redoc>
-<script src="https://cdn.jsdelivr.net/npm/redoc@next/bundles/redoc.standalone.js"> </script>
+<div id="redoc-container">
+
+</div>
+<!-- <redoc spec-url='http://localhost:4001/spec.json'></redoc> -->
+<script src="https://cdn.jsdelivr.net/npm/redoc@next/bundles/redoc.standalone.js"></script>
+<script>
+    Redoc.init('http://localhost:4001/spec.json', {
+        showExtensions: true,
+        noAutoAuth: true,
+        theme: {
+            colors: {
+                primary: {
+                    main: '#102a43'
+                },
+            },
+            logo: {
+                gutter: '20px'
+            },
+            typography: {
+                fontFamily: '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif',
+
+                headings: {
+                    fontFamily: '-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif',
+                },
+                code: {
+                    color: '#f2994a'
+                },
+                links: {
+                    color: '#528afa'
+                }
+            }
+        }
+    }, document.getElementById("redoc-container"));
+</script>
 </body>
 </html>
