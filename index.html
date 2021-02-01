@@ -4,7 +4,7 @@
     <title>journy.io API documentation</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="https://fonts.googleapis.com/css?family=Poppins:700|Roboto:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
 
     <!-- ReDoc doesn't change outer page styles -->
@@ -22,17 +22,31 @@
 <script src="redoc.js"></script>
 <script>
     var container = document.getElementById("redoc-container");
-    Redoc.init('https://api.journy.app/spec.json', {
+    Redoc.init('http://localhost:4001/spec.json', {
         showExtensions: true,
         noAutoAuth: true,
+        hideLoading: true,
         theme: {
             colors: {
                 primary: {
-                    main: '#102a43'
+                    main: '#102a43',
+                },
+                success: {
+                    main: '#239d56',
+                },
+                error: {
+                    main: '#e05f52',
+                },
+                http: {
+                    get: '#239d56',
+                    post: '#4d84f5',
                 },
             },
             logo: {
-                gutter: '20px'
+                gutter: '50px',
+            },
+            menu: {
+                backgroundColor: '#F7F9FC',
             },
             typography: {
                 fontFamily: 'Roboto,sans-serif',
@@ -42,12 +56,11 @@
                     fontFamily: 'Roboto,sans-serif',
                     fontWeight: '700',
                 },
-                code: {
-                    fontSize: '14px',
+                links: {
                     color: '#f2994a',
                 },
-                links: {
-                    color: '#528afa',
+                code: {
+                    color: '#4d84f5',
                 },
             },
         },
